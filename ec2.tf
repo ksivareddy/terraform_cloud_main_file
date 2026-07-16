@@ -1,5 +1,5 @@
 module "dev_compute_1" {
-source  = "app.terraform.io/Terraform_Modules_Github_Testing/compute/modules"
+  source  = "app.terraform.io/Terraform_Modules_Github_Testing/compute/modules"
   version = "1.0.0"
   amis = {
     us-east-1 = "ami-0b6d9d3d33ba97d99"
@@ -18,8 +18,8 @@ source  = "app.terraform.io/Terraform_Modules_Github_Testing/compute/modules"
 }
 
 module "dev_elb_1" {
-    source  = "app.terraform.io/Terraform_Modules_Github_Testing/elb/modules"
-  version = "1.0.0"
+  source          = "app.terraform.io/Terraform_Modules_Github_Testing/elb/modules"
+  version         = "1.0.0"
   environment     = module.dev_vpc_1.environment
   nlbname         = "dev-nlb"
   subnets         = module.dev_vpc_1.public_subnets_id
@@ -29,8 +29,8 @@ module "dev_elb_1" {
 }
 
 module "dev_elb_1_public" {
-  source  = "app.terraform.io/Terraform_Modules_Github_Testing/elb/modules"
-  version = "1.0.0"
+  source          = "app.terraform.io/Terraform_Modules_Github_Testing/elb/modules"
+  version         = "1.0.0"
   environment     = module.dev_vpc_1.environment
   nlbname         = "dev-nlb-public"
   subnets         = module.dev_vpc_1.public_subnets_id
@@ -41,7 +41,7 @@ module "dev_elb_1_public" {
 
 module "dev_iam_1" {
   source              = "app.terraform.io/Terraform_Modules_Github_Testing/iam/modules"
-  version = "1.0.0"
+  version             = "1.0.0"
   environment         = module.dev_vpc_1.environment
   rolename            = "SivaTMRole"
   instanceprofilename = "SivaTMinstprofile"

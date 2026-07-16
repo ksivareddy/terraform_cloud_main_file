@@ -1,6 +1,6 @@
 module "dev_vpc_1" {
   source             = "app.terraform.io/Terraform_Modules_Github_Testing/network/modules"
-  version = "1.0.0"
+  version            = "1.0.0"
   vpc_cidr           = "10.90.0.0/16"
   vpc_name           = "dev_vpc_1"
   environment        = "Development"
@@ -11,8 +11,8 @@ module "dev_vpc_1" {
 }
 
 module "dev_natgw_1" {
-    source  = "app.terraform.io/Terraform_Modules_Github_Testing/nat/modules"
-  version = "1.0.0"
+  source           = "app.terraform.io/Terraform_Modules_Github_Testing/nat/modules"
+  version          = "1.0.0"
   public_subnet_id = module.dev_vpc_1.public_subnets_id_1
   vpc_name         = module.dev_vpc_1.vpc_name
 }

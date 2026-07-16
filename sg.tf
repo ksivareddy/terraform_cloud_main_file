@@ -1,6 +1,6 @@
 module "dev_sg_1" {
-  source  = "app.terraform.io/Terraform_Modules_Github_Testing/sg/modules"
-  version = "1.0.0"
+  source        = "app.terraform.io/Terraform_Modules_Github_Testing/sg/modules"
+  version       = "1.0.0"
   vpc_name      = module.dev_vpc_1.vpc_name
   vpc_id        = module.dev_vpc_1.vpc_id
   environment   = module.dev_vpc_1.environment
